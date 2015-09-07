@@ -7,7 +7,7 @@ TimeoutStartSec=0
 ExecStartPre=-/usr/bin/docker kill web-server1
 ExecStartPre=-/usr/bin/docker rm web-server1
 ExecStartPre=/usr/bin/docker pull sleemjm1/virtualisation_assn1_web
-ExecStart=/usr/bin/docker run --rm --name web-server1 sleemjm1/virtualisation_assn1_web --volumes-from data-container1 
+ExecStart=/usr/bin/docker run --volumes-from data-container1 --rm --name web-server1 sleemjm1/virtualisation_assn1_web  
 ExecStop=/usr/bin/docker stop web-server1
 
 [X-Fleet]
