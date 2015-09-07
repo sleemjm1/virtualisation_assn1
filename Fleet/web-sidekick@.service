@@ -1,0 +1,11 @@
+[Unit]
+Description=Web Server Check
+BindsTo=web-server@%i.service
+After=web-server@%i.service
+
+[Service]
+ExecStart=/bin/sh -c "while true; do etcdctl set /services/website/web-server@%i '{ \"host\": \"%H\", \"port\": 80, \"version\": \"52c7248a14\" }' --ttl 60;sleep 45;done"
+ExecStop=/usr/bin/etcdctl rm /services/website/web-server@%i
+
+[X-Fleet]
+MachineOf=web-server@%i.service
