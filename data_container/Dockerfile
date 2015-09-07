@@ -5,3 +5,5 @@ MAINTAINER Joe Sleeman "sleemjm1@student.op.ac.nz"
 COPY index.html /var/www/html/index.html
 
 VOLUME ["var/www/html"]
+
+ENTRYPOINT [ "/bin/sh", "-c", "while true; do echo data container; sleep 60; done" ]
