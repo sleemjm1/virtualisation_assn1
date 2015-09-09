@@ -6,8 +6,6 @@ RUN apt-get -yqq update
 RUN apt-get -yqq upgrade
 RUN apt-get -yqq install apache2
 
-WORKDIR /var/www/html
-
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
 ENV APACHE_LOG_DIR /var/log/apache2
