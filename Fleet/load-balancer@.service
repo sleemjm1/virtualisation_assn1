@@ -8,7 +8,7 @@ TimeoutStartSec=0
 ExecStartPre=-/usr/bin/docker kill load-balancer
 ExecStartPre=-/usr/bin/docker rm load-balancer
 ExecStartPre=/usr/bin/docker pull tclark/assn1-load-balancer
-ExecStart=/usr/bin/docker run --rm --name load-balancer -p 80:80 tclark/assn1-load-balancer
+ExecStart=/usr/bin/docker run --rm --name load-balancer tclark/assn1-load-balancer
 ExecStop=/usr/bin/docker stop load-balancer
 
 [X-Fleet]
